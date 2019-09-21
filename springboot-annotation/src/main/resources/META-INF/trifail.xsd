@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema
+        xmlns="http://www.trifail.com/schema/trifail"
+        xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        xmlns:beans="http://www.springframework.org/schema/beans"
+        targetNamespace="http://www.trifail.com/schema/trifail">
+
+<!--    <xsd:import namespace="http://www.w3.org/XML/1998/namespace"/>-->
+    <xsd:import namespace="http://www.springframework.org/schema/beans"/>
+
+    <!--自定义map类型-->
+    <xsd:complexType name="metadataType">
+        <xsd:attribute name="key" type="xsd:string" use="required">
+            <xsd:annotation>
+                <xsd:documentation><![CDATA[ The parameter key. ]]></xsd:documentation>
+            </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute name="value" type="xsd:string" use="required">
+            <xsd:annotation>
+                <xsd:documentation><![CDATA[ The parameter value. ]]></xsd:documentation>
+            </xsd:annotation>
+        </xsd:attribute>
+    </xsd:complexType>
+
+    <xsd:complexType name="applicationType">
+        <xsd:sequence minOccurs="0" maxOccurs="unbounded">
+            <xsd:element ref="metadata" minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence>
+        <xsd:attribute name="id" type="xsd:ID">
+            <xsd:annotation>
+                <xsd:documentation><![CDATA[ The unique identifier for a bean. ]]></xsd:documentation>
+            </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute name="name" type="xsd:string" use="optional">
+            <xsd:annotation>
+                <xsd:documentation><![CDATA[ The monitor address. ]]></xsd:documentation>
+            </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute name="owner" type="xsd:string" use="optional">
+            <xsd:annotation>
+                <xsd:documentation><![CDATA[ The monitor address. ]]></xsd:documentation>
+            </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute name="version" type="xsd:string" use="optional">
+            <xsd:annotation>
+                <xsd:documentation><![CDATA[ The monitor address. ]]></xsd:documentation>
+            </xsd:annotation>
+        </xsd:attribute>
+    </xsd:complexType>
+
+
+    <!--定义map-->
+    <xsd:element name="metadata" type="metadataType">
+        <xsd:annotation>
+            <xsd:documentation><![CDATA[ The service url parameter ]]></xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+
+    <!--applicationConfig-->
+    <xsd:element name="application" type="applicationType">
+        <xsd:annotation>
+            <xsd:documentation>tag your application </xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+
+</xsd:schema>
