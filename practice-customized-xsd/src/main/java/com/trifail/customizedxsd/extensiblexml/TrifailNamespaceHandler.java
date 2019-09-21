@@ -1,8 +1,7 @@
-package com.trifail.springbootannotation.extensiblexml;
+package com.trifail.customizedxsd.extensiblexml;
 
-import com.trifail.springbootannotation.extensiblexml.parser.TrifailBeanDefinitionParser;
+import com.trifail.customizedxsd.extensiblexml.parser.TrifailBeanDefinitionParser;
 import config.ApplicationConfig;
-import config.ClassReferConfig;
 import org.springframework.beans.factory.xml.NamespaceHandlerSupport;
 
 public class TrifailNamespaceHandler extends NamespaceHandlerSupport {

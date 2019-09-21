@@ -1,4 +1,4 @@
-package com.trifail.springbootannotation;
+package com.trifail.customizedxsd;
 
 import config.ApplicationConfig;
 import org.junit.Test;
@@ -13,7 +13,7 @@ import java.util.Map;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class SpringbootAnnotationApplicationTests {
+public class SpringbootCustomizedXsdApplicationTests {
 
     @Test
     public void contextLoads() {
